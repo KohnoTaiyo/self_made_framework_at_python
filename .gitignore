@@ -1,1 +1,5 @@
 tcp/sever_recv.txt
+tcp/client_send.txt
+tcp/client_recv.txt
+tcp/server_send.txt
+tcp/server_recv.txt
