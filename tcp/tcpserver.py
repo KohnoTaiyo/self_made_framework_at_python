@@ -1,15 +1,8 @@
 import socket
 
 class TCPServer:
-    """
-    TCP通信を行うサーバーを表すクラス
-    """
     def serve(self):
-        """
-        サーバーを起動する
-        """
         print("=== サーバーを起動します ===")
-
         try:
             server_socket = socket.socket()
             server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -25,6 +18,11 @@ class TCPServer:
 
             with open("sever_recv.txt", "wb") as f:
                 f.write(request)
+
+            with open("server_send.txt", "rb") as f:
+                response = f.read()
+
+            client_socket.send(response)
             
             client_socket.close()
 
